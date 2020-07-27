@@ -60,6 +60,7 @@ export class Intrinsic implements IResolvable {
     // throw here we'll obfuscate that descriptive error with something worse.
     // So return a string representation that indicates this thing is a token
     // and needs resolving.
+    // eslint-disable-next-line quotes
     return `<unresolved-token>`;
   }
 

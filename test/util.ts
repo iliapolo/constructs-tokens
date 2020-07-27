@@ -1,4 +1,4 @@
-import { Construct } from '../lib';
+import { Construct } from 'constructs';
 
 export class App extends Construct {
   constructor() {

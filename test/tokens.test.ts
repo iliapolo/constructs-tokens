@@ -227,9 +227,8 @@ test('fails if token in a hash key resolves to a non-string', () => {
   // THEN
   try {
     resolve(s)
-  } catch {
     fail('The key "${Token[TOKEN.19]}" has been resolved to {"Ref":"Other"} but must be resolvable to a string')
-  }
+  } catch (error) {}
 
 })
 
@@ -373,7 +372,6 @@ test('newError returns an error with the creation stack trace', () => {
 })
 
 describe('type coercion', () => {
-  const tests: any = { };
 
   const inputs = [
     'a string',
@@ -542,16 +540,6 @@ class DataType extends BaseDataType {
   constructor() {
     super(12);
   }
-}
-
-/**
- * Return Tokens in both flavors that resolve to the given string
- */
-function tokensThatResolveTo(value: any): Token[] {
-  return [
-    new Intrinsic(value),
-    Lazy.anyValue({ produce: () => value }),
-  ];
 }
 
 /**

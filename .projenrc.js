@@ -7,6 +7,9 @@ const project = new JsiiProject({
   repository: "https://github.com/iliapolo/constructs-tokens",
   dependencies: {
     'constructs': Semver.caret('3.0.4')
+  },
+  peerDependencies: {
+    'constructs': Semver.caret('3.0.4')
   }
 });
 
