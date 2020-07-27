@@ -50,7 +50,9 @@
     "jsii-docgen": "^1.3.2"
   },
   "peerDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "constructs": "^3.0.4"
+  },
   "bundledDependencies": [],
   "engines": {
     "node": ">= 10.17.0"
