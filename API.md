@@ -4,47 +4,47 @@
 
 Name|Description
 ----|-----------
-[DefaultTokenResolver](#iliapolo-constructs-tokens-defaulttokenresolver)|Default resolver implementation.
-[Lazy](#iliapolo-constructs-tokens-lazy)|Lazily produce a value.
-[StringConcat](#iliapolo-constructs-tokens-stringconcat)|Converts all fragments to strings and concats those.
-[Token](#iliapolo-constructs-tokens-token)|Represents a special or lazily-evaluated value.
-[Tokenization](#iliapolo-constructs-tokens-tokenization)|Less oft-needed functions to manipulate Tokens.
-[TokenizedStringFragments](#iliapolo-constructs-tokens-tokenizedstringfragments)|Fragments of a concatenated string containing stringified Tokens.
+[DefaultTokenResolver](#constructs-tokens-staging-defaulttokenresolver)|Default resolver implementation.
+[Lazy](#constructs-tokens-staging-lazy)|Lazily produce a value.
+[StringConcat](#constructs-tokens-staging-stringconcat)|Converts all fragments to strings and concats those.
+[Token](#constructs-tokens-staging-token)|Represents a special or lazily-evaluated value.
+[Tokenization](#constructs-tokens-staging-tokenization)|Less oft-needed functions to manipulate Tokens.
+[TokenizedStringFragments](#constructs-tokens-staging-tokenizedstringfragments)|Fragments of a concatenated string containing stringified Tokens.
 
 
 **Structs**
 
 Name|Description
 ----|-----------
-[EncodingOptions](#iliapolo-constructs-tokens-encodingoptions)|Properties to string encodings.
-[LazyAnyValueOptions](#iliapolo-constructs-tokens-lazyanyvalueoptions)|Options for creating lazy untyped tokens.
-[LazyListValueOptions](#iliapolo-constructs-tokens-lazylistvalueoptions)|Options for creating a lazy list token.
-[LazyStringValueOptions](#iliapolo-constructs-tokens-lazystringvalueoptions)|Options for creating a lazy string token.
-[ResolveOptions](#iliapolo-constructs-tokens-resolveoptions)|Options to the resolve() operation.
+[EncodingOptions](#constructs-tokens-staging-encodingoptions)|Properties to string encodings.
+[LazyAnyValueOptions](#constructs-tokens-staging-lazyanyvalueoptions)|Options for creating lazy untyped tokens.
+[LazyListValueOptions](#constructs-tokens-staging-lazylistvalueoptions)|Options for creating a lazy list token.
+[LazyStringValueOptions](#constructs-tokens-staging-lazystringvalueoptions)|Options for creating a lazy string token.
+[ResolveOptions](#constructs-tokens-staging-resolveoptions)|Options to the resolve() operation.
 
 
 **Interfaces**
 
 Name|Description
 ----|-----------
-[IAnyProducer](#iliapolo-constructs-tokens-ianyproducer)|Interface for lazy untyped value producers.
-[IFragmentConcatenator](#iliapolo-constructs-tokens-ifragmentconcatenator)|Function used to concatenate symbols in the target document language.
-[IListProducer](#iliapolo-constructs-tokens-ilistproducer)|Interface for lazy list producers.
-[INumberProducer](#iliapolo-constructs-tokens-inumberproducer)|Interface for lazy number producers.
-[IPostProcessor](#iliapolo-constructs-tokens-ipostprocessor)|A Token that can post-process the complete resolved value, after resolve() has recursed over it.
-[IResolvable](#iliapolo-constructs-tokens-iresolvable)|Interface for values that can be resolvable later.
-[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)|Current resolution context for tokens.
-[IStringProducer](#iliapolo-constructs-tokens-istringproducer)|Interface for lazy string producers.
-[ITokenMapper](#iliapolo-constructs-tokens-itokenmapper)|Interface to apply operation to tokens in a string.
-[ITokenResolver](#iliapolo-constructs-tokens-itokenresolver)|How to resolve tokens.
+[IAnyProducer](#constructs-tokens-staging-ianyproducer)|Interface for lazy untyped value producers.
+[IFragmentConcatenator](#constructs-tokens-staging-ifragmentconcatenator)|Function used to concatenate symbols in the target document language.
+[IListProducer](#constructs-tokens-staging-ilistproducer)|Interface for lazy list producers.
+[INumberProducer](#constructs-tokens-staging-inumberproducer)|Interface for lazy number producers.
+[IPostProcessor](#constructs-tokens-staging-ipostprocessor)|A Token that can post-process the complete resolved value, after resolve() has recursed over it.
+[IResolvable](#constructs-tokens-staging-iresolvable)|Interface for values that can be resolvable later.
+[IResolveContext](#constructs-tokens-staging-iresolvecontext)|Current resolution context for tokens.
+[IStringProducer](#constructs-tokens-staging-istringproducer)|Interface for lazy string producers.
+[ITokenMapper](#constructs-tokens-staging-itokenmapper)|Interface to apply operation to tokens in a string.
+[ITokenResolver](#constructs-tokens-staging-itokenresolver)|How to resolve tokens.
 
 
 
-## class DefaultTokenResolver 🔹 <a id="iliapolo-constructs-tokens-defaulttokenresolver"></a>
+## class DefaultTokenResolver 🔹 <a id="constructs-tokens-staging-defaulttokenresolver"></a>
 
 Default resolver implementation.
 
-__Implements__: [ITokenResolver](#iliapolo-constructs-tokens-itokenresolver)
+__Implements__: [ITokenResolver](#constructs-tokens-staging-itokenresolver)
 
 ### Initializer
 
@@ -55,13 +55,13 @@ __Implements__: [ITokenResolver](#iliapolo-constructs-tokens-itokenresolver)
 new DefaultTokenResolver(concat: IFragmentConcatenator)
 ```
 
-* **concat** (<code>[IFragmentConcatenator](#iliapolo-constructs-tokens-ifragmentconcatenator)</code>)  *No description*
+* **concat** (<code>[IFragmentConcatenator](#constructs-tokens-staging-ifragmentconcatenator)</code>)  *No description*
 
 
 ### Methods
 
 
-#### resolveList(xs, context)🔹 <a id="iliapolo-constructs-tokens-defaulttokenresolver-resolvelist"></a>
+#### resolveList(xs, context)🔹 <a id="constructs-tokens-staging-defaulttokenresolver-resolvelist"></a>
 
 Resolve a tokenized list.
 
@@ -70,12 +70,12 @@ resolveList(xs: Array<string>, context: IResolveContext): any
 ```
 
 * **xs** (<code>Array<string></code>)  *No description*
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
-#### resolveString(fragments, context)🔹 <a id="iliapolo-constructs-tokens-defaulttokenresolver-resolvestring"></a>
+#### resolveString(fragments, context)🔹 <a id="constructs-tokens-staging-defaulttokenresolver-resolvestring"></a>
 
 Resolve string fragments to Tokens.
 
@@ -83,13 +83,13 @@ Resolve string fragments to Tokens.
 resolveString(fragments: TokenizedStringFragments, context: IResolveContext): any
 ```
 
-* **fragments** (<code>[TokenizedStringFragments](#iliapolo-constructs-tokens-tokenizedstringfragments)</code>)  *No description*
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **fragments** (<code>[TokenizedStringFragments](#constructs-tokens-staging-tokenizedstringfragments)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
-#### resolveToken(t, context, postProcessor)🔹 <a id="iliapolo-constructs-tokens-defaulttokenresolver-resolvetoken"></a>
+#### resolveToken(t, context, postProcessor)🔹 <a id="constructs-tokens-staging-defaulttokenresolver-resolvetoken"></a>
 
 Default Token resolution.
 
@@ -100,16 +100,16 @@ then finally post-process it.
 resolveToken(t: IResolvable, context: IResolveContext, postProcessor: IPostProcessor): any
 ```
 
-* **t** (<code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>)  *No description*
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
-* **postProcessor** (<code>[IPostProcessor](#iliapolo-constructs-tokens-ipostprocessor)</code>)  *No description*
+* **t** (<code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
+* **postProcessor** (<code>[IPostProcessor](#constructs-tokens-staging-ipostprocessor)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
 
 
-## class Lazy  <a id="iliapolo-constructs-tokens-lazy"></a>
+## class Lazy  <a id="constructs-tokens-staging-lazy"></a>
 
 Lazily produce a value.
 
@@ -120,7 +120,7 @@ will only be calculated later, during synthesis.
 ### Methods
 
 
-#### *static* anyValue(producer, options?) <a id="iliapolo-constructs-tokens-lazy-anyvalue"></a>
+#### *static* anyValue(producer, options?) <a id="constructs-tokens-staging-lazy-anyvalue"></a>
 
 Produces a lazy token from an untyped value.
 
@@ -128,15 +128,15 @@ Produces a lazy token from an untyped value.
 static anyValue(producer: IAnyProducer, options?: LazyAnyValueOptions): IResolvable
 ```
 
-* **producer** (<code>[IAnyProducer](#iliapolo-constructs-tokens-ianyproducer)</code>)  The lazy producer.
-* **options** (<code>[LazyAnyValueOptions](#iliapolo-constructs-tokens-lazyanyvalueoptions)</code>)  Options.
+* **producer** (<code>[IAnyProducer](#constructs-tokens-staging-ianyproducer)</code>)  The lazy producer.
+* **options** (<code>[LazyAnyValueOptions](#constructs-tokens-staging-lazyanyvalueoptions)</code>)  Options.
   * **displayHint** (<code>string</code>)  Use the given name as a display hint. __*Default*__: No hint
   * **omitEmptyArray** (<code>boolean</code>)  If the produced value is an array and it is empty, return 'undefined' instead. __*Default*__: false
 
 __Returns__:
-* <code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>
+* <code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>
 
-#### *static* listValue(producer, options?) <a id="iliapolo-constructs-tokens-lazy-listvalue"></a>
+#### *static* listValue(producer, options?) <a id="constructs-tokens-staging-lazy-listvalue"></a>
 
 Returns a list-ified token for a lazy value.
 
@@ -144,15 +144,15 @@ Returns a list-ified token for a lazy value.
 static listValue(producer: IListProducer, options?: LazyListValueOptions): Array<string>
 ```
 
-* **producer** (<code>[IListProducer](#iliapolo-constructs-tokens-ilistproducer)</code>)  The producer.
-* **options** (<code>[LazyListValueOptions](#iliapolo-constructs-tokens-lazylistvalueoptions)</code>)  Options.
+* **producer** (<code>[IListProducer](#constructs-tokens-staging-ilistproducer)</code>)  The producer.
+* **options** (<code>[LazyListValueOptions](#constructs-tokens-staging-lazylistvalueoptions)</code>)  Options.
   * **displayHint** (<code>string</code>)  Use the given name as a display hint. __*Default*__: No hint
   * **omitEmpty** (<code>boolean</code>)  If the produced list is empty, return 'undefined' instead. __*Default*__: false
 
 __Returns__:
 * <code>Array<string></code>
 
-#### *static* numberValue(producer) <a id="iliapolo-constructs-tokens-lazy-numbervalue"></a>
+#### *static* numberValue(producer) <a id="constructs-tokens-staging-lazy-numbervalue"></a>
 
 Returns a numberified token for a lazy value.
 
@@ -160,12 +160,12 @@ Returns a numberified token for a lazy value.
 static numberValue(producer: INumberProducer): number
 ```
 
-* **producer** (<code>[INumberProducer](#iliapolo-constructs-tokens-inumberproducer)</code>)  The producer.
+* **producer** (<code>[INumberProducer](#constructs-tokens-staging-inumberproducer)</code>)  The producer.
 
 __Returns__:
 * <code>number</code>
 
-#### *static* stringValue(producer, options?) <a id="iliapolo-constructs-tokens-lazy-stringvalue"></a>
+#### *static* stringValue(producer, options?) <a id="constructs-tokens-staging-lazy-stringvalue"></a>
 
 Returns a stringified token for a lazy value.
 
@@ -173,8 +173,8 @@ Returns a stringified token for a lazy value.
 static stringValue(producer: IStringProducer, options?: LazyStringValueOptions): string
 ```
 
-* **producer** (<code>[IStringProducer](#iliapolo-constructs-tokens-istringproducer)</code>)  The producer.
-* **options** (<code>[LazyStringValueOptions](#iliapolo-constructs-tokens-lazystringvalueoptions)</code>)  Options.
+* **producer** (<code>[IStringProducer](#constructs-tokens-staging-istringproducer)</code>)  The producer.
+* **options** (<code>[LazyStringValueOptions](#constructs-tokens-staging-lazystringvalueoptions)</code>)  Options.
   * **displayHint** (<code>string</code>)  Use the given name as a display hint. __*Default*__: No hint
 
 __Returns__:
@@ -182,13 +182,13 @@ __Returns__:
 
 
 
-## class StringConcat  <a id="iliapolo-constructs-tokens-stringconcat"></a>
+## class StringConcat  <a id="constructs-tokens-staging-stringconcat"></a>
 
 Converts all fragments to strings and concats those.
 
 Drops 'undefined's.
 
-__Implements__: [IFragmentConcatenator](#iliapolo-constructs-tokens-ifragmentconcatenator)
+__Implements__: [IFragmentConcatenator](#constructs-tokens-staging-ifragmentconcatenator)
 
 ### Initializer
 
@@ -204,7 +204,7 @@ new StringConcat()
 ### Methods
 
 
-#### join(left, right) <a id="iliapolo-constructs-tokens-stringconcat-join"></a>
+#### join(left, right) <a id="constructs-tokens-staging-stringconcat-join"></a>
 
 Join the fragment on the left and on the right.
 
@@ -220,7 +220,7 @@ __Returns__:
 
 
 
-## class Token  <a id="iliapolo-constructs-tokens-token"></a>
+## class Token  <a id="constructs-tokens-staging-token"></a>
 
 Represents a special or lazily-evaluated value.
 
@@ -235,7 +235,7 @@ semantics.
 ### Methods
 
 
-#### *static* asAny(value) <a id="iliapolo-constructs-tokens-token-asany"></a>
+#### *static* asAny(value) <a id="constructs-tokens-staging-token-asany"></a>
 
 Return a resolvable representation of the given value.
 
@@ -246,9 +246,9 @@ static asAny(value: any): IResolvable
 * **value** (<code>any</code>)  *No description*
 
 __Returns__:
-* <code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>
+* <code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>
 
-#### *static* asList(value, options?) <a id="iliapolo-constructs-tokens-token-aslist"></a>
+#### *static* asList(value, options?) <a id="constructs-tokens-staging-token-aslist"></a>
 
 Return a reversible list representation of this token.
 
@@ -257,13 +257,13 @@ static asList(value: any, options?: EncodingOptions): Array<string>
 ```
 
 * **value** (<code>any</code>)  *No description*
-* **options** (<code>[EncodingOptions](#iliapolo-constructs-tokens-encodingoptions)</code>)  *No description*
+* **options** (<code>[EncodingOptions](#constructs-tokens-staging-encodingoptions)</code>)  *No description*
   * **displayHint** (<code>string</code>)  A hint for the Token's purpose when stringifying it. __*Default*__: no display hint
 
 __Returns__:
 * <code>Array<string></code>
 
-#### *static* asNumber(value) <a id="iliapolo-constructs-tokens-token-asnumber"></a>
+#### *static* asNumber(value) <a id="constructs-tokens-staging-token-asnumber"></a>
 
 Return a reversible number representation of this token.
 
@@ -276,7 +276,7 @@ static asNumber(value: any): number
 __Returns__:
 * <code>number</code>
 
-#### *static* asString(value, options?) <a id="iliapolo-constructs-tokens-token-asstring"></a>
+#### *static* asString(value, options?) <a id="constructs-tokens-staging-token-asstring"></a>
 
 Return a reversible string representation of this token.
 
@@ -293,13 +293,13 @@ static asString(value: any, options?: EncodingOptions): string
 ```
 
 * **value** (<code>any</code>)  *No description*
-* **options** (<code>[EncodingOptions](#iliapolo-constructs-tokens-encodingoptions)</code>)  *No description*
+* **options** (<code>[EncodingOptions](#constructs-tokens-staging-encodingoptions)</code>)  *No description*
   * **displayHint** (<code>string</code>)  A hint for the Token's purpose when stringifying it. __*Default*__: no display hint
 
 __Returns__:
 * <code>string</code>
 
-#### *static* isUnresolved(obj) <a id="iliapolo-constructs-tokens-token-isunresolved"></a>
+#### *static* isUnresolved(obj) <a id="constructs-tokens-staging-token-isunresolved"></a>
 
 Returns true if obj represents an unresolved value.
 
@@ -323,7 +323,7 @@ __Returns__:
 
 
 
-## class Tokenization  <a id="iliapolo-constructs-tokens-tokenization"></a>
+## class Tokenization  <a id="constructs-tokens-staging-tokenization"></a>
 
 Less oft-needed functions to manipulate Tokens.
 
@@ -331,7 +331,7 @@ Less oft-needed functions to manipulate Tokens.
 ### Methods
 
 
-#### *static* isResolvable(obj) <a id="iliapolo-constructs-tokens-tokenization-isresolvable"></a>
+#### *static* isResolvable(obj) <a id="constructs-tokens-staging-tokenization-isresolvable"></a>
 
 Return whether the given object is an IResolvable object.
 
@@ -348,7 +348,7 @@ static isResolvable(obj: any): boolean
 __Returns__:
 * <code>boolean</code>
 
-#### *static* resolve(obj, options) <a id="iliapolo-constructs-tokens-tokenization-resolve"></a>
+#### *static* resolve(obj, options) <a id="constructs-tokens-staging-tokenization-resolve"></a>
 
 Resolves an object by evaluating all tokens and removing any undefined or empty objects or arrays.
 
@@ -359,15 +359,15 @@ static resolve(obj: any, options: ResolveOptions): any
 ```
 
 * **obj** (<code>any</code>)  The object to resolve.
-* **options** (<code>[ResolveOptions](#iliapolo-constructs-tokens-resolveoptions)</code>)  Prefix key path components for diagnostics.
-  * **resolver** (<code>[ITokenResolver](#iliapolo-constructs-tokens-itokenresolver)</code>)  The resolver to apply to any resolvable tokens found. 
+* **options** (<code>[ResolveOptions](#constructs-tokens-staging-resolveoptions)</code>)  Prefix key path components for diagnostics.
+  * **resolver** (<code>[ITokenResolver](#constructs-tokens-staging-itokenresolver)</code>)  The resolver to apply to any resolvable tokens found. 
   * **scope** (<code>[IConstruct](#constructs-iconstruct)</code>)  The scope from which resolution is performed. 
   * **preparing** (<code>boolean</code>)  Whether the resolution is being executed during the prepare phase or not. __*Default*__: false
 
 __Returns__:
 * <code>any</code>
 
-#### *static* reverseList(l) <a id="iliapolo-constructs-tokens-tokenization-reverselist"></a>
+#### *static* reverseList(l) <a id="constructs-tokens-staging-tokenization-reverselist"></a>
 
 Un-encode a Tokenized value from a list.
 
@@ -378,9 +378,9 @@ static reverseList(l: Array<string>): IResolvable
 * **l** (<code>Array<string></code>)  *No description*
 
 __Returns__:
-* <code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>
+* <code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>
 
-#### *static* reverseNumber(n) <a id="iliapolo-constructs-tokens-tokenization-reversenumber"></a>
+#### *static* reverseNumber(n) <a id="constructs-tokens-staging-tokenization-reversenumber"></a>
 
 Un-encode a Tokenized value from a number.
 
@@ -391,9 +391,9 @@ static reverseNumber(n: number): IResolvable
 * **n** (<code>number</code>)  *No description*
 
 __Returns__:
-* <code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>
+* <code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>
 
-#### *static* reverseString(s) <a id="iliapolo-constructs-tokens-tokenization-reversestring"></a>
+#### *static* reverseString(s) <a id="constructs-tokens-staging-tokenization-reversestring"></a>
 
 Un-encode a string potentially containing encoded tokens.
 
@@ -404,9 +404,9 @@ static reverseString(s: string): TokenizedStringFragments
 * **s** (<code>string</code>)  *No description*
 
 __Returns__:
-* <code>[TokenizedStringFragments](#iliapolo-constructs-tokens-tokenizedstringfragments)</code>
+* <code>[TokenizedStringFragments](#constructs-tokens-staging-tokenizedstringfragments)</code>
 
-#### *static* stringifyNumber(x) <a id="iliapolo-constructs-tokens-tokenization-stringifynumber"></a>
+#### *static* stringifyNumber(x) <a id="constructs-tokens-staging-tokenization-stringifynumber"></a>
 
 Stringify a number directly or lazily if it's a Token.
 
@@ -423,7 +423,7 @@ __Returns__:
 
 
 
-## class TokenizedStringFragments 🔹 <a id="iliapolo-constructs-tokens-tokenizedstringfragments"></a>
+## class TokenizedStringFragments 🔹 <a id="constructs-tokens-staging-tokenizedstringfragments"></a>
 
 Fragments of a concatenated string containing stringified Tokens.
 
@@ -447,13 +447,13 @@ Name | Type | Description
 -----|------|-------------
 **firstValue**🔹 | <code>any</code> | Returns the first value.
 **length**🔹 | <code>number</code> | Returns the number of fragments.
-**tokens**🔹 | <code>Array<[IResolvable](#iliapolo-constructs-tokens-iresolvable)></code> | Return all Tokens from this string.
-**firstToken**?🔹 | <code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code> | Returns the first token.<br/>__*Optional*__
+**tokens**🔹 | <code>Array<[IResolvable](#constructs-tokens-staging-iresolvable)></code> | Return all Tokens from this string.
+**firstToken**?🔹 | <code>[IResolvable](#constructs-tokens-staging-iresolvable)</code> | Returns the first token.<br/>__*Optional*__
 
 ### Methods
 
 
-#### addIntrinsic(value)🔹 <a id="iliapolo-constructs-tokens-tokenizedstringfragments-addintrinsic"></a>
+#### addIntrinsic(value)🔹 <a id="constructs-tokens-staging-tokenizedstringfragments-addintrinsic"></a>
 
 Adds an intrinsic fragment.
 
@@ -466,7 +466,7 @@ addIntrinsic(value: any): void
 
 
 
-#### addLiteral(lit)🔹 <a id="iliapolo-constructs-tokens-tokenizedstringfragments-addliteral"></a>
+#### addLiteral(lit)🔹 <a id="constructs-tokens-staging-tokenizedstringfragments-addliteral"></a>
 
 Adds a literal fragment.
 
@@ -479,7 +479,7 @@ addLiteral(lit: any): void
 
 
 
-#### addToken(token)🔹 <a id="iliapolo-constructs-tokens-tokenizedstringfragments-addtoken"></a>
+#### addToken(token)🔹 <a id="constructs-tokens-staging-tokenizedstringfragments-addtoken"></a>
 
 Adds a token fragment.
 
@@ -487,12 +487,12 @@ Adds a token fragment.
 addToken(token: IResolvable): void
 ```
 
-* **token** (<code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>)  the token to add.
+* **token** (<code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>)  the token to add.
 
 
 
 
-#### join(concat)🔹 <a id="iliapolo-constructs-tokens-tokenizedstringfragments-join"></a>
+#### join(concat)🔹 <a id="constructs-tokens-staging-tokenizedstringfragments-join"></a>
 
 Combine the string fragments using the given joiner.
 
@@ -502,12 +502,12 @@ If there are any
 join(concat: IFragmentConcatenator): any
 ```
 
-* **concat** (<code>[IFragmentConcatenator](#iliapolo-constructs-tokens-ifragmentconcatenator)</code>)  *No description*
+* **concat** (<code>[IFragmentConcatenator](#constructs-tokens-staging-ifragmentconcatenator)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
-#### mapTokens(mapper)🔹 <a id="iliapolo-constructs-tokens-tokenizedstringfragments-maptokens"></a>
+#### mapTokens(mapper)🔹 <a id="constructs-tokens-staging-tokenizedstringfragments-maptokens"></a>
 
 Apply a transformation function to all tokens in the string.
 
@@ -515,14 +515,14 @@ Apply a transformation function to all tokens in the string.
 mapTokens(mapper: ITokenMapper): TokenizedStringFragments
 ```
 
-* **mapper** (<code>[ITokenMapper](#iliapolo-constructs-tokens-itokenmapper)</code>)  *No description*
+* **mapper** (<code>[ITokenMapper](#constructs-tokens-staging-itokenmapper)</code>)  *No description*
 
 __Returns__:
-* <code>[TokenizedStringFragments](#iliapolo-constructs-tokens-tokenizedstringfragments)</code>
+* <code>[TokenizedStringFragments](#constructs-tokens-staging-tokenizedstringfragments)</code>
 
 
 
-## struct EncodingOptions  <a id="iliapolo-constructs-tokens-encodingoptions"></a>
+## struct EncodingOptions  <a id="constructs-tokens-staging-encodingoptions"></a>
 
 
 Properties to string encodings.
@@ -535,14 +535,14 @@ Name | Type | Description
 
 
 
-## interface IAnyProducer  <a id="iliapolo-constructs-tokens-ianyproducer"></a>
+## interface IAnyProducer  <a id="constructs-tokens-staging-ianyproducer"></a>
 
 
 Interface for lazy untyped value producers.
 ### Methods
 
 
-#### produce(context) <a id="iliapolo-constructs-tokens-ianyproducer-produce"></a>
+#### produce(context) <a id="constructs-tokens-staging-ianyproducer-produce"></a>
 
 Produce the value.
 
@@ -550,16 +550,16 @@ Produce the value.
 produce(context: IResolveContext): any
 ```
 
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
 
 
-## interface IFragmentConcatenator 🔹 <a id="iliapolo-constructs-tokens-ifragmentconcatenator"></a>
+## interface IFragmentConcatenator 🔹 <a id="constructs-tokens-staging-ifragmentconcatenator"></a>
 
-__Implemented by__: [StringConcat](#iliapolo-constructs-tokens-stringconcat)
+__Implemented by__: [StringConcat](#constructs-tokens-staging-stringconcat)
 
 Function used to concatenate symbols in the target document language.
 
@@ -567,7 +567,7 @@ Interface so it could potentially be exposed over jsii.
 ### Methods
 
 
-#### join(left, right)🔹 <a id="iliapolo-constructs-tokens-ifragmentconcatenator-join"></a>
+#### join(left, right)🔹 <a id="constructs-tokens-staging-ifragmentconcatenator-join"></a>
 
 Join the fragment on the left and on the right.
 
@@ -583,14 +583,14 @@ __Returns__:
 
 
 
-## interface IListProducer  <a id="iliapolo-constructs-tokens-ilistproducer"></a>
+## interface IListProducer  <a id="constructs-tokens-staging-ilistproducer"></a>
 
 
 Interface for lazy list producers.
 ### Methods
 
 
-#### produce(context) <a id="iliapolo-constructs-tokens-ilistproducer-produce"></a>
+#### produce(context) <a id="constructs-tokens-staging-ilistproducer-produce"></a>
 
 Produce the list value.
 
@@ -598,21 +598,21 @@ Produce the list value.
 produce(context: IResolveContext): Array<string>
 ```
 
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>Array<string></code>
 
 
 
-## interface INumberProducer  <a id="iliapolo-constructs-tokens-inumberproducer"></a>
+## interface INumberProducer  <a id="constructs-tokens-staging-inumberproducer"></a>
 
 
 Interface for lazy number producers.
 ### Methods
 
 
-#### produce(context) <a id="iliapolo-constructs-tokens-inumberproducer-produce"></a>
+#### produce(context) <a id="constructs-tokens-staging-inumberproducer-produce"></a>
 
 Produce the number value.
 
@@ -620,21 +620,21 @@ Produce the number value.
 produce(context: IResolveContext): number
 ```
 
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>number</code>
 
 
 
-## interface IPostProcessor  <a id="iliapolo-constructs-tokens-ipostprocessor"></a>
+## interface IPostProcessor  <a id="constructs-tokens-staging-ipostprocessor"></a>
 
 
 A Token that can post-process the complete resolved value, after resolve() has recursed over it.
 ### Methods
 
 
-#### postProcess(input, context) <a id="iliapolo-constructs-tokens-ipostprocessor-postprocess"></a>
+#### postProcess(input, context) <a id="constructs-tokens-staging-ipostprocessor-postprocess"></a>
 
 Process the completely resolved value, after full recursion/resolution has happened.
 
@@ -643,16 +643,16 @@ postProcess(input: any, context: IResolveContext): any
 ```
 
 * **input** (<code>any</code>)  *No description*
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
 
 
-## interface IResolvable  <a id="iliapolo-constructs-tokens-iresolvable"></a>
+## interface IResolvable  <a id="constructs-tokens-staging-iresolvable"></a>
 
-__Obtainable from__: [Lazy](#iliapolo-constructs-tokens-lazy).[anyValue](#iliapolo-constructs-tokens-lazy#iliapolo-constructs-tokens-lazy-anyvalue)(), [Token](#iliapolo-constructs-tokens-token).[asAny](#iliapolo-constructs-tokens-token#iliapolo-constructs-tokens-token-asany)(), [Tokenization](#iliapolo-constructs-tokens-tokenization).[reverseList](#iliapolo-constructs-tokens-tokenization#iliapolo-constructs-tokens-tokenization-reverselist)(), [Tokenization](#iliapolo-constructs-tokens-tokenization).[reverseNumber](#iliapolo-constructs-tokens-tokenization#iliapolo-constructs-tokens-tokenization-reversenumber)()
+__Obtainable from__: [Lazy](#constructs-tokens-staging-lazy).[anyValue](#constructs-tokens-staging-lazy#constructs-tokens-staging-lazy-anyvalue)(), [Token](#constructs-tokens-staging-token).[asAny](#constructs-tokens-staging-token#constructs-tokens-staging-token-asany)(), [Tokenization](#constructs-tokens-staging-tokenization).[reverseList](#constructs-tokens-staging-tokenization#constructs-tokens-staging-tokenization-reverselist)(), [Tokenization](#constructs-tokens-staging-tokenization).[reverseNumber](#constructs-tokens-staging-tokenization#constructs-tokens-staging-tokenization-reversenumber)()
 
 Interface for values that can be resolvable later.
 
@@ -668,7 +668,7 @@ Name | Type | Description
 ### Methods
 
 
-#### resolve(context) <a id="iliapolo-constructs-tokens-iresolvable-resolve"></a>
+#### resolve(context) <a id="constructs-tokens-staging-iresolvable-resolve"></a>
 
 Produce the Token's value at resolution time.
 
@@ -676,12 +676,12 @@ Produce the Token's value at resolution time.
 resolve(context: IResolveContext): any
 ```
 
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
-#### toString() <a id="iliapolo-constructs-tokens-iresolvable-tostring"></a>
+#### toString() <a id="constructs-tokens-staging-iresolvable-tostring"></a>
 
 Return a string representation of this resolvable object.
 
@@ -697,7 +697,7 @@ __Returns__:
 
 
 
-## interface IResolveContext  <a id="iliapolo-constructs-tokens-iresolvecontext"></a>
+## interface IResolveContext  <a id="constructs-tokens-staging-iresolvecontext"></a>
 
 
 Current resolution context for tokens.
@@ -713,7 +713,7 @@ Name | Type | Description
 ### Methods
 
 
-#### registerPostProcessor(postProcessor) <a id="iliapolo-constructs-tokens-iresolvecontext-registerpostprocessor"></a>
+#### registerPostProcessor(postProcessor) <a id="constructs-tokens-staging-iresolvecontext-registerpostprocessor"></a>
 
 Use this postprocessor after the entire token structure has been resolved.
 
@@ -721,12 +721,12 @@ Use this postprocessor after the entire token structure has been resolved.
 registerPostProcessor(postProcessor: IPostProcessor): void
 ```
 
-* **postProcessor** (<code>[IPostProcessor](#iliapolo-constructs-tokens-ipostprocessor)</code>)  *No description*
+* **postProcessor** (<code>[IPostProcessor](#constructs-tokens-staging-ipostprocessor)</code>)  *No description*
 
 
 
 
-#### resolve(x) <a id="iliapolo-constructs-tokens-iresolvecontext-resolve"></a>
+#### resolve(x) <a id="constructs-tokens-staging-iresolvecontext-resolve"></a>
 
 Resolve an inner object.
 
@@ -741,14 +741,14 @@ __Returns__:
 
 
 
-## interface IStringProducer  <a id="iliapolo-constructs-tokens-istringproducer"></a>
+## interface IStringProducer  <a id="constructs-tokens-staging-istringproducer"></a>
 
 
 Interface for lazy string producers.
 ### Methods
 
 
-#### produce(context) <a id="iliapolo-constructs-tokens-istringproducer-produce"></a>
+#### produce(context) <a id="constructs-tokens-staging-istringproducer-produce"></a>
 
 Produce the string value.
 
@@ -756,14 +756,14 @@ Produce the string value.
 produce(context: IResolveContext): string
 ```
 
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>string</code>
 
 
 
-## interface ITokenMapper  <a id="iliapolo-constructs-tokens-itokenmapper"></a>
+## interface ITokenMapper  <a id="constructs-tokens-staging-itokenmapper"></a>
 
 
 Interface to apply operation to tokens in a string.
@@ -772,7 +772,7 @@ Interface so it can be exported via jsii.
 ### Methods
 
 
-#### mapToken(t) <a id="iliapolo-constructs-tokens-itokenmapper-maptoken"></a>
+#### mapToken(t) <a id="constructs-tokens-staging-itokenmapper-maptoken"></a>
 
 Replace a single token.
 
@@ -780,22 +780,22 @@ Replace a single token.
 mapToken(t: IResolvable): any
 ```
 
-* **t** (<code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>)  *No description*
+* **t** (<code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
 
 
-## interface ITokenResolver  <a id="iliapolo-constructs-tokens-itokenresolver"></a>
+## interface ITokenResolver  <a id="constructs-tokens-staging-itokenresolver"></a>
 
-__Implemented by__: [DefaultTokenResolver](#iliapolo-constructs-tokens-defaulttokenresolver)
+__Implemented by__: [DefaultTokenResolver](#constructs-tokens-staging-defaulttokenresolver)
 
 How to resolve tokens.
 ### Methods
 
 
-#### resolveList(l, context) <a id="iliapolo-constructs-tokens-itokenresolver-resolvelist"></a>
+#### resolveList(l, context) <a id="constructs-tokens-staging-itokenresolver-resolvelist"></a>
 
 Resolve a tokenized list.
 
@@ -804,12 +804,12 @@ resolveList(l: Array<string>, context: IResolveContext): any
 ```
 
 * **l** (<code>Array<string></code>)  *No description*
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
-#### resolveString(s, context) <a id="iliapolo-constructs-tokens-itokenresolver-resolvestring"></a>
+#### resolveString(s, context) <a id="constructs-tokens-staging-itokenresolver-resolvestring"></a>
 
 Resolve a string with at least one stringified token in it.
 
@@ -819,13 +819,13 @@ Resolve a string with at least one stringified token in it.
 resolveString(s: TokenizedStringFragments, context: IResolveContext): any
 ```
 
-* **s** (<code>[TokenizedStringFragments](#iliapolo-constructs-tokens-tokenizedstringfragments)</code>)  *No description*
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
+* **s** (<code>[TokenizedStringFragments](#constructs-tokens-staging-tokenizedstringfragments)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
-#### resolveToken(t, context, postProcessor) <a id="iliapolo-constructs-tokens-itokenresolver-resolvetoken"></a>
+#### resolveToken(t, context, postProcessor) <a id="constructs-tokens-staging-itokenresolver-resolvetoken"></a>
 
 Resolve a single token.
 
@@ -833,16 +833,16 @@ Resolve a single token.
 resolveToken(t: IResolvable, context: IResolveContext, postProcessor: IPostProcessor): any
 ```
 
-* **t** (<code>[IResolvable](#iliapolo-constructs-tokens-iresolvable)</code>)  *No description*
-* **context** (<code>[IResolveContext](#iliapolo-constructs-tokens-iresolvecontext)</code>)  *No description*
-* **postProcessor** (<code>[IPostProcessor](#iliapolo-constructs-tokens-ipostprocessor)</code>)  *No description*
+* **t** (<code>[IResolvable](#constructs-tokens-staging-iresolvable)</code>)  *No description*
+* **context** (<code>[IResolveContext](#constructs-tokens-staging-iresolvecontext)</code>)  *No description*
+* **postProcessor** (<code>[IPostProcessor](#constructs-tokens-staging-ipostprocessor)</code>)  *No description*
 
 __Returns__:
 * <code>any</code>
 
 
 
-## struct LazyAnyValueOptions  <a id="iliapolo-constructs-tokens-lazyanyvalueoptions"></a>
+## struct LazyAnyValueOptions  <a id="constructs-tokens-staging-lazyanyvalueoptions"></a>
 
 
 Options for creating lazy untyped tokens.
@@ -856,7 +856,7 @@ Name | Type | Description
 
 
 
-## struct LazyListValueOptions  <a id="iliapolo-constructs-tokens-lazylistvalueoptions"></a>
+## struct LazyListValueOptions  <a id="constructs-tokens-staging-lazylistvalueoptions"></a>
 
 
 Options for creating a lazy list token.
@@ -870,7 +870,7 @@ Name | Type | Description
 
 
 
-## struct LazyStringValueOptions  <a id="iliapolo-constructs-tokens-lazystringvalueoptions"></a>
+## struct LazyStringValueOptions  <a id="constructs-tokens-staging-lazystringvalueoptions"></a>
 
 
 Options for creating a lazy string token.
@@ -883,7 +883,7 @@ Name | Type | Description
 
 
 
-## struct ResolveOptions  <a id="iliapolo-constructs-tokens-resolveoptions"></a>
+## struct ResolveOptions  <a id="constructs-tokens-staging-resolveoptions"></a>
 
 
 Options to the resolve() operation.
@@ -897,7 +897,7 @@ readable way.
 
 Name | Type | Description 
 -----|------|-------------
-**resolver** | <code>[ITokenResolver](#iliapolo-constructs-tokens-itokenresolver)</code> | The resolver to apply to any resolvable tokens found.
+**resolver** | <code>[ITokenResolver](#constructs-tokens-staging-itokenresolver)</code> | The resolver to apply to any resolvable tokens found.
 **scope** | <code>[IConstruct](#constructs-iconstruct)</code> | The scope from which resolution is performed.
 **preparing**? | <code>boolean</code> | Whether the resolution is being executed during the prepare phase or not.<br/>__*Default*__: false
 
