@@ -15,6 +15,10 @@ const project = new JsiiProject({
     distName: 'constructs-tokens-staging',
     module: 'constructs_tokens_staging'
   },
+  dotnet: {
+    dotNetNamespace: "Org.ConstructsTokensStaging",
+    packageId: "Org.ConstructsTokensStaging"
+  }
 
 });
 

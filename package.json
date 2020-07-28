@@ -90,6 +90,10 @@
       "python": {
         "distName": "constructs-tokens-staging",
         "module": "constructs_tokens_staging"
+      },
+      "dotnet": {
+        "namespace": "Org.ConstructsTokensStaging",
+        "packageId": "Org.ConstructsTokensStaging"
       }
     },
     "tsc": {
