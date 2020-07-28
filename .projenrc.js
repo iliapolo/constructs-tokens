@@ -10,7 +10,12 @@ const project = new JsiiProject({
   },
   peerDependencies: {
     'constructs': Semver.caret('3.0.4')
-  }
+  },
+  python: {
+    distName: 'constructs-tokens-staging',
+    module: 'constructs_tokens_staging'
+  },
+
 });
 
 project.gitignore.exclude('.vscode/')
