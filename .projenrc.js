@@ -5,11 +5,13 @@ const project = new JsiiProject({
   authorEmail: "eli.polonsky@gmail.com",
   name: "constructs-tokens-staging",
   repository: "https://github.com/iliapolo/constructs-tokens",
-  dependencies: {
-    'constructs': Semver.caret('3.0.4')
-  },
   peerDependencies: {
     'constructs': Semver.caret('3.0.4')
+  },
+  java: {
+    javaPackage: 'io.github.iliapolo.constructstokensstaging',
+    mavenGroupId: 'io.github.iliapolo',
+    mavenArtifactId: 'constructs-tokens-staging'
   },
   python: {
     distName: 'constructs-tokens-staging',

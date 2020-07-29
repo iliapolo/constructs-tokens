@@ -53,9 +53,7 @@
   "peerDependencies": {
     "constructs": "^3.0.4"
   },
-  "dependencies": {
-    "constructs": "^3.0.4"
-  },
+  "dependencies": {},
   "bundledDependencies": [],
   "engines": {
     "node": ">= 10.17.0"
@@ -87,6 +85,13 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "io.github.iliapolo.constructstokensstaging",
+        "maven": {
+          "groupId": "io.github.iliapolo",
+          "artifactId": "constructs-tokens-staging"
+        }
+      },
       "python": {
         "distName": "constructs-tokens-staging",
         "module": "constructs_tokens_staging"
